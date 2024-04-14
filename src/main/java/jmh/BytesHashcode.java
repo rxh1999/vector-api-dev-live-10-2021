@@ -104,7 +104,14 @@ public class BytesHashcode {
 
     @Benchmark
     public int scalar() {
-        return Arrays.hashCode(a);
+        if(a == null) {
+            return 0;
+        }
+        int res = 1;
+        for (byte b : a) {
+            res = 31 * res + b;
+        }
+        return res;
     }
 
     /*

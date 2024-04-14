@@ -10,9 +10,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jmh.version>1.32</jmh.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <jmh.version>1.37</jmh.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -36,13 +36,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.13.0</version>
                 <configuration>
                     <compilerArgs>
                         <arg>--add-modules</arg>
                         <arg>jdk.incubator.vector</arg>
-                        <arg>--add-modules</arg>
-                        <arg>jdk.incubator.foreign</arg>
+<!--                        jdk21 compiler fail at-->
+<!--                        <arg>&#45;&#45;add-modules</arg>-->
+<!--                        <arg>jdk.incubator.foreign</arg>-->
                     </compilerArgs>
                     <verbose>true</verbose>
                     <fork>true</fork>
